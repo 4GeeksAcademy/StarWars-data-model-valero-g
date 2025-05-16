@@ -64,9 +64,8 @@ class Characters(db.Model):
 favoritos = Table(
     "favoritos",
     db.metadata,
-    Column("id", Integer, primary_key = True),
-    Column("user_id", ForeignKey("user.id")),
-    Column("planet_id", ForeignKey("planet.id")),
-    Column("character_id", ForeignKey("character.id"))
+    Column("user_id", ForeignKey("user.id"), primary_key =True, nullable = True),
+    Column("planet_id", ForeignKey("planet.id"), primary_key =True, nullable = True),
+    Column("character_id", ForeignKey("character.id"), primary_key =True, nullable = True)
     )
 
